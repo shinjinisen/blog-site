@@ -83,7 +83,7 @@ app.delete("/posts/:id", (req,res)=>{
   const searchId= posts.find((post)=> post.id === id );
   if (!searchId) return res.status(404).json({ message:"No such Post"});
   
-  posts.splice(index,1);
+  posts.splice(searchId,1);
   res.json({message: "Post deleted "});
 });
 
